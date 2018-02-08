@@ -26,7 +26,7 @@ class ImageAdmin(admin.ModelAdmin):
         'caption',
         'creator',
         'created_at',
-        'updated_at'
+        'updated_at',
     )
 
 

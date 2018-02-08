@@ -3,6 +3,26 @@ from . import models
 from nomadgram.users import models as user_models
 
 
+class SmallImageSerializer(serializers.ModelSerializer):
+
+    """ Used for the notifications """
+    class Meta:
+        model = models.Image
+        fields = (
+            'file',
+        )
+        
+class CountImageSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Image
+        fields = (
+            'id',
+            'file',
+            'comments_count',
+            'likes_count'
+        )
+
 class FeedUserSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -14,7 +34,7 @@ class FeedUserSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     
-    creator = FeedUserSerializer()
+    creator = FeedUserSerializer(read_only=True)
     
     class Meta:
         model = models.Comment
@@ -28,7 +48,9 @@ class CommentSerializer(serializers.ModelSerializer):
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Like
-        fields = '__all__'
+        fields = (
+            'creator',
+        )
 
 
 class ImageSerializer(serializers.ModelSerializer):
@@ -45,6 +67,16 @@ class ImageSerializer(serializers.ModelSerializer):
             'caption',
             'comments',
             'likes_count',
-            'creator'
+            'creator',
+            'created_at'
         )
 
+class InputImageSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Image
+        fields = (
+            'file',
+            'location',
+            'caption'
+        )
