@@ -1,5 +1,5 @@
 """
-Test settings for Nomadgram project.
+Test settings for nomadgram project.
 
 - Used to run tests fast on the continuous integration server and locally
 """
@@ -17,7 +17,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = False
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='CHANGEME!!!')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='orcmzBNkBE558iioPAkO8VUSJeYDEj8YbnlLq4r1c3xZpTlUwv')
 
 # Mail settings
 # ------------------------------------------------------------------------------
