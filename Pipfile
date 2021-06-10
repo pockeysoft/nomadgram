@@ -11,7 +11,7 @@ name = "pypi"
 
 [packages]
 
-django = "==1.11.10"
+django = "==2.2.24"
 cookiecutter = "*"
 django-environ = "==0.4.4"
 whitenoise = "==3.3.1"
